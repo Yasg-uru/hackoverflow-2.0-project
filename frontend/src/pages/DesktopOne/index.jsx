@@ -92,9 +92,7 @@ export default function DesktopOnePage() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-row justify-start w-[18%] h-max mr-[569px] right-[36%] bottom-0 top-0 p-4 my-auto md:mr-5 bg-blue_gray-100_01 absolute rounded-[22px]">
-                      <Img src="images/img_frame_44.svg" alt="image" className="h-[61px] w-[61px] mb-0.5 ml-[3px]" />
-                    </div>
+                  
                     <Button
                       color="blue_gray_100_01"
                       leftIcon={<Img src="images/img_ionpersonsharp.svg" alt="ion:person-sharp" />}
