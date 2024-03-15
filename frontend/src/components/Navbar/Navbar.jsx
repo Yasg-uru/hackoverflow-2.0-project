@@ -2,7 +2,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; // NavLink ko import karna hai
 import './Navbar.css';
+import { useSelector } from 'react-redux';
 function Navbar() {
+  const isloggedin=useSelector((state)=>state.auth.isLoggedIn);
+  const {role}=useSelector((state)=>state.auth.userdata)
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -15,7 +18,18 @@ function Navbar() {
         <li><NavLink to="/services">News </NavLink></li>
         <li><NavLink to="/contact" >Maps </NavLink></li>
         <li><NavLink to="/login" >Login </NavLink></li>
+<<<<<<< HEAD
         <li><NavLink to="/login" >Signup</NavLink></li>
+=======
+        {/* <li><NavLink to="/application" >Apply to become  </NavLink></li> */}
+       {
+        role==="admin"?<li>
+          <NavLink to="/admin-panel" >
+            Admin panel
+          </NavLink>
+        </li>:""
+       }
+>>>>>>> 8680fd56bb8548448a810383284123a2cbf2d850
       </ul>
     </nav>
   );
