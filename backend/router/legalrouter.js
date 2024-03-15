@@ -1,7 +1,7 @@
 import express from "express";
 import { createcategory,deleteCategory,updateCategory,getCategories } from "../controller/legalcontroller.js";
 const router=express.Router();
-router.post('/categories', createcategory);
+router.post('/create', createcategory);
 
 // Delete a category
 router.delete('/categories/:id', deleteCategory);

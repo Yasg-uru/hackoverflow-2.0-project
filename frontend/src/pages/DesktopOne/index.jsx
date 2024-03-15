@@ -191,7 +191,7 @@ export default function DesktopOnePage() {
                             </>
                           </Text>
                         </div>
-                        <div className="flex flex-row sm:flex-col justify-between items-center w-[80%] md:w-full mt-2.5 md:mt-0 sm:gap-10">
+                        <div className="flex flex-row sm:flex-col justify-between items-center w-[80%] md:w-full mt-2.5 md:mt-0 sm:gap-2">
 
                           <ul className="navbar-links">
                             <li><NavLink to="/" className="!text-blue_gray-700 !text-[28.98px]" >Home</NavLink></li>

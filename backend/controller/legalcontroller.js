@@ -7,8 +7,7 @@ export const createcategory = catchAsyncError(async (req, res, next) => {
     const category = await Category.create({
       title,
       content,
-      auther,
-      publicationDate,
+
       tags,
     });
     res.json({
@@ -21,24 +20,22 @@ export const createcategory = catchAsyncError(async (req, res, next) => {
   }
 });
 export const deleteCategory = async (req, res) => {
-    try {
-      const categoryId = req.params.id;
-  
-      const deletedCategory = await Category.findByIdAndDelete(categoryId);
-  
-      if (!deletedCategory) {
-        return res.status(404).json({ message: 'Category not found' });
-      }
-  
-      res.status(200).json(deletedCategory);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal Server Error' });
+  try {
+    const categoryId = req.params.id;
+
+    const deletedCategory = await Category.findByIdAndDelete(categoryId);
+
+    if (!deletedCategory) {
+      return res.status(404).json({ message: "Category not found" });
     }
-  };
-  // controllers/categoryController.js
 
-
+    res.status(200).json(deletedCategory);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+// controllers/categoryController.js
 
 export const updateCategory = async (req, res) => {
   try {
@@ -52,22 +49,21 @@ export const updateCategory = async (req, res) => {
     );
 
     if (!updatedCategory) {
-      return res.status(404).json({ message: 'Category not found' });
+      return res.status(404).json({ message: "Category not found" });
     }
 
     res.status(200).json(updatedCategory);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
 
-
 export const getCategories = async (req, res) => {
   try {
-    const { page = 1, limit = 10, search = '' } = req.query;
+    const { page = 1, limit = 10, search = "" } = req.query;
 
-    const regex = new RegExp(search, 'i');
+    const regex = new RegExp(search, "i");
 
     const categories = await Category.find({
       $or: [{ name: regex }, { description: regex }],
@@ -85,12 +81,6 @@ export const getCategories = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Internal Server Error' });
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
-
-
-
-
-  
-  

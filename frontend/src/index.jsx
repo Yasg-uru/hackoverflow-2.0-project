@@ -4,8 +4,15 @@ import App from "./App";
 import "./styles/tailwind.css";
 import "./styles/index.css";
 import "./styles/font.css";
-
+import {Provider} from "react-redux";
+import store from "./redux toolkit/store.js"
+import {Toaster } from "react-hot-toast"
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-root.render(<App />);
+root.render(
+<Provider  store={store}>
+<Toaster/>
+<App />
+</Provider>
+);

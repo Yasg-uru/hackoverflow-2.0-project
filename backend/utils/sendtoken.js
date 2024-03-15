@@ -1,5 +1,5 @@
 const  sendtoken = function (statuscode, res, user) {
-    const token = user.getjwttoken();
+    const token = user.getjwtToken();
     console.log("this is a token"+token)
   
     const options = {
