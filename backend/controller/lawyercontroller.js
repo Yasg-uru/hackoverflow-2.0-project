@@ -23,11 +23,11 @@ export const createlawyerapplication = catchAsyncError(
       const userId = req.user._id;
       console.log("this is a user id :"+req.user._id)
 
-      const cloudinary = uploadOnCloudinary(req.file.path);
+      const cloudinary = await uploadOnCloudinary(req.file.path);
       const documents = cloudinary.secure_url;
 
       const applicationlawyer =await  Lawyer.create({
-        userId,
+        userid:userId,
         documents,
       });
       console.log("this is a req.user.email:"+req.user.email)
@@ -126,10 +126,10 @@ export const getLawyerApplications = async (req, res, next) => {
     }
 
     // Get total count of documents matching the query
-    const totalCount = await LawyerModel.countDocuments(query);
+    const totalCount = await Lawyer.countDocuments(query);
 
     // Fetch lawyer applications with pagination
-    const lawyerApplications = await LawyerModel.find(query)
+    const lawyerApplications = await Lawyer.find(query)
       .skip(skip)
       .limit(limit)
       .sort({ createdAt: -1 }) // Sort by creation date descending
@@ -137,7 +137,7 @@ export const getLawyerApplications = async (req, res, next) => {
 
     // Calculate total pages
     const totalPages = Math.ceil(totalCount / limit);
-
+console.log("this is data for testing :"+lawyerApplications)
     res.status(200).json({
       success: true,
       data: {
@@ -156,3 +156,5 @@ export const getLawyerApplications = async (req, res, next) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
+// import Lawyer from 'path/to/LawyerModel'; // Import Lawyer model from appropriate path
+
