@@ -161,9 +161,10 @@ function Getlawyers() {
       );
     } else if (lawyer.status === "approved") {
       return (
+
         <div className="flex gap-4 ">
           <button onClick={()=>dispatch(rejectapplication(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-            Reject
+           Approved want to Reject
           </button>
         </div>
       );
@@ -171,7 +172,7 @@ function Getlawyers() {
       return (
         <div className="flex gap-4 ">
           <button onClick={()=>dispatch(approveforlawyer(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-            Approve
+            Rejected you want to Approve
           </button>
         </div>
       );

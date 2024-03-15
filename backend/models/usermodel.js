@@ -4,6 +4,8 @@ import { Schema, model } from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import crypto from "crypto";
+// const crypto = require('crypto');
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const userSchema = new Schema({
     name: {

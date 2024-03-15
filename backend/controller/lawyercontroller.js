@@ -65,9 +65,9 @@ export const approveforlawyer = catchAsyncError(async (req, res, next) => {
     if (lawyer.status === "approved") {
       return next(new Errorhandler("your are unable to recreate lawyer"));
     }
-    if (lawyer.status === "rejected") {
-      return next(new Errorhandler("already rejected "));
-    }
+    // if (lawyer.status === "rejected") {
+    //   return next(new Errorhandler("already rejected "));
+    // }
     lawyer.status = "approved";
     lawyer.adminnotes = adminnotes;
     lawyer.save();
@@ -89,7 +89,7 @@ export const rejectapplication = catchAsyncError(async (req, res, next) => {
     if (!lawyer) {
       return next(new Errorhandler("lawyyer not found ", 404));
     }
-    if (lawyer.status === "pending") {
+    if (lawyer.status === "rejected") {
       return next(new Errorhandler("already rejected", 404));
     }
     lawyer.status = "rejected";
