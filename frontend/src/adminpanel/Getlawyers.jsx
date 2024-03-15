@@ -132,7 +132,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getlawyers } from "../redux toolkit/lawyerSlice";
-import { approveforlawyer, rejectapplication } from "../../../backend/controller/lawyercontroller";
+import {approvestatus,rejectstatus} from "../redux toolkit/lawyerSlice.js"
 
 function Getlawyers() {
   const dispatch = useDispatch();
@@ -151,28 +151,27 @@ function Getlawyers() {
     if (lawyer.status === "pending") {
       return (
         <div className="flex gap-4 ">
-          <button onClick={()=>dispatch(approveforlawyer(lawyer._id))} className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+          <button onClick={()=>dispatch(approvestatus(lawyer._id))} className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
             Approve
           </button>
-          <button onClick={()=>dispatch(rejectapplication(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+          <button onClick={()=>dispatch(rejectstatus(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
             Reject
           </button>
         </div>
       );
     } else if (lawyer.status === "approved") {
       return (
-
         <div className="flex gap-4 ">
-          <button onClick={()=>dispatch(rejectapplication(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-           Approved want to Reject
+          <button onClick={()=>dispatch(rejectstatus(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            Reject
           </button>
         </div>
       );
     } else if (lawyer.status === "rejected") {
       return (
         <div className="flex gap-4 ">
-          <button onClick={()=>dispatch(approveforlawyer(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
-            Rejected you want to Approve
+          <button onClick={()=>dispatch(approvestatus(lawyer._id))}  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out">
+            Approve
           </button>
         </div>
       );

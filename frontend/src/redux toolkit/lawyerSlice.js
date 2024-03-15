@@ -112,7 +112,9 @@ export const getlawyers = createAsyncThunk("/lawyer/getlawyer", async () => {
 });
 export const approvestatus = createAsyncThunk("/lawyer/approve", async (id) => {
   try {
-    const res = axios.post(`http://localhost:4000/api/lawyer/approve/${id}`);
+    const res = axios.post(`http://localhost:4000/api/lawyer/approve/${id}`,{},{
+      withCredentials:true
+    });
     await toast.promise(res, {
       loading: "...loading",
       success: (data) => {
