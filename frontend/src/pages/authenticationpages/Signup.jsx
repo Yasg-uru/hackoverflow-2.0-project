@@ -63,7 +63,7 @@ function Signup() {
     const res = await dispatch(registeruser(Formdata));
     setformdata({
       name: "",
-      emaila: "",
+      email: "",
       password: "",
       profile: "",
     });
