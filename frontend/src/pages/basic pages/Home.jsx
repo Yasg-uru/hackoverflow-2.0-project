@@ -12,7 +12,7 @@ function Home(){
 
         <div className="content-text">
           <h1>Welcome to Our website Legal Awareness </h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rutrum consequat ex,  tempus.</p>
+          
           <button className="explore-button">Explore</button>
         </div>
 

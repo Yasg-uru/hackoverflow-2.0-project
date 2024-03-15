@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Box.css"; // CSS file for styling
 
@@ -7,7 +8,9 @@ return(
     <div className="box">
       
     </div>
-    <div className="box"></div>
+    <div className="box">
+    
+    </div>
     <div className="box"></div>
     
   </div>
@@ -15,3 +18,5 @@ return(
 }
 
 export default BoxSection;
+
+

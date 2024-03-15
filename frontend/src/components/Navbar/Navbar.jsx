@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { NavLink } from 'react-router-dom'; // NavLink ko import karna hai
 import './Navbar.css';
@@ -14,9 +15,11 @@ function Navbar() {
         <li><NavLink to="/services">News </NavLink></li>
         <li><NavLink to="/contact" >Maps </NavLink></li>
         <li><NavLink to="/login" >Login </NavLink></li>
+        <li><NavLink to="/login" >Signup</NavLink></li>
       </ul>
     </nav>
   );
 }
 
 export default Navbar;
+
