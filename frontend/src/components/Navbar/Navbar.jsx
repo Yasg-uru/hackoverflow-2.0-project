@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 function Navbar() {
   const isloggedin=useSelector((state)=>state.auth.isLoggedIn);
   const {role}=useSelector((state)=>state.auth.userdata)
+  
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -13,18 +14,24 @@ function Navbar() {
 
       <ul className="navbar-links">
         <li><NavLink to="/"  >Home</NavLink></li>
-        <li><NavLink to="/about" >Helpline</NavLink></li>
-        <li><NavLink to="/services">News </NavLink></li>
-        <li><NavLink to="/contact" >Maps </NavLink></li>
+        {/* <li><NavLink to="/about" >Helpline</NavLink></li> */}
+        
+       
         <li><NavLink to="/login" >Login </NavLink></li>
+        <li><NavLink to="/signup" >Sign Up </NavLink></li>
+        <li><NavLink to="/application" >Apply for lawyer </NavLink></li>
         {/* <li><NavLink to="/application" >Apply to become  </NavLink></li> */}
-       {
+       {/* {
         role==="admin"?<li>
           <NavLink to="/admin-panel" >
             Admin panel
           </NavLink>
         </li>:""
+       } */}
+       {
+        role==="admin"? <li><NavLink to="/getlawyer" >Get applications </NavLink></li>:""
        }
+       
       </ul>
     </nav>
   );

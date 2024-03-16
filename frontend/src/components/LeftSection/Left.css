@@ -1,22 +1,49 @@
 /* Default styles */
 .left-section {
-    display: inline-block;
-    width: 50%;
-    padding: 20px;
-    background-color: #f0f0f0;
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.kyr {
+  width: 418px;
+  height: 67px;
+  margin-left: 525px;  
+  font-style: normal;
+  font-weight: 300;
+  font-size: 44.5842px;
+  color: #425066;
+}
+
+.pl {
+  width: 447px;
+  height: 80px;
+  margin: auto;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 53.5011px;
+  color: #DC1F27;
+}
+
+.paragraphs p {
+  margin-bottom: 10px;
+}
+
+/* Media Queries for responsiveness */
+
+@media only screen and (max-width: 768px) {
+
+  /* Styles for tablets and smaller devices */
+  .left-section {
+    width: 100%;
+    /* Take full width on smaller screens */
+    padding: 10px;
+    /* Adjust padding for smaller screens */
   }
-  
-  .paragraphs p {
-    margin-bottom: 10px;
-  }
-  
-  /* Media Queries for responsiveness */
-  
-  @media only screen and (max-width: 768px) {
-    /* Styles for tablets and smaller devices */
-    .left-section {
-      width: 100%; /* Take full width on smaller screens */
-      padding: 10px; /* Adjust padding for smaller screens */
-    }
-  }
-  
+}

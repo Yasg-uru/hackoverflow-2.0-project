@@ -13,15 +13,18 @@ import Adminpanel from './adminpanel/Adminpanel.jsx'
 import Login from './authcomponents/Login.jsx'
 import  Application  from './adminpanel/Application.jsx'
 import Getlawyers from './adminpanel/Getlawyers.jsx'
-import Chatting from './chatting/Chatting.jsx'
+import Chatting from './chatting/Chatting.jsx';
+import LegalResources from './legalcomponnents/Legalresources.jsx'
+import { BrowserRouter } from 'react-router-dom';
+import Front from "./homepage/Front.jsx"
 function App() {
 
 
   return (
-    <>
+    <BrowserRouter>
 
   <Routes>
-<Route path='/' element={<Home/>}/>
+<Route path='/' element={<Front/>}/>
 <Route path='/signup' element={<Signup/>}></Route>
 <Route path='/admin-panel' element={<Adminpanel/>}>
 </Route>
@@ -29,8 +32,11 @@ function App() {
 <Route path='/application' element={<Application/>}></Route>
 <Route path='/getlawyer' element={<Getlawyers/>}/>
 <Route path='/chatting' element={<Chatting/>}></Route>
+<Route path='/legal' element={<LegalResources/>}> </Route>
   </Routes>  
-  </>
+
+
+  </BrowserRouter>
 
 
 
